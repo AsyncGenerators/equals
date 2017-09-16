@@ -15,8 +15,9 @@
     "typescript"
   ],
   "license": "MIT",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/es2015/index.js",
+  "typings": "./dist/es2015/index.d.ts",
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
@@ -31,7 +32,9 @@
   },
   "scripts": {
     "test": "nyc node_modules/mocha/bin/mocha --harmony-async-iteration --require source-map-support/register --compilers ts:ts-node/register test/*.ts",
-    "build": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist",
+    "build": "npm run build:commonjs && npm run build:es2015",
+    "build:commonjs": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist/commonjs",
+    "build:es2015": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist/es2015 --module es2015",
     "cover": "codecov"
   },
   "engines": {
