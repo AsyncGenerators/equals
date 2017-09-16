@@ -39,7 +39,8 @@
   "nyc": {
     "exclude": [
       "node_modules/",
-      "test/"
+      "test/",
+      "coverage/"
     ],
     "extension": [
       ".ts"

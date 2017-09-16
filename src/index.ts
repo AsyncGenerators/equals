@@ -13,27 +13,19 @@ export default async function equal<T>(
     let nb = await itb.next();
 
     if (na.done && nb.done) {
-      if (typeof na.value === typeof undefined && typeof nb.value === typeof undefined) {
-        return true;
-      }
-      if (typeof na.value !== typeof nb.value) {
-        return false;
-      }
-      return comparer(na.value, nb.value);
+      return true;
     }
-    else {
-      if (typeof na.value !== typeof nb.value)
-        return false;
-      if (comparer(na.value, nb.value) === false) {
-        return false;
-      }
-    }
+
     if (na.done !== nb.done) {
-      if (na.done) {
-        return na.done === (await itb.next()).done;
-      } else if (nb.done) {
-        return nb.done === (await ita.next()).done;
-      }
+      return false;
+    }
+
+    if (typeof na.value !== typeof nb.value) {
+      return false;
+    }
+
+    if (comparer(na.value, nb.value) === false) {
+      return false;
     }
   }
 }
