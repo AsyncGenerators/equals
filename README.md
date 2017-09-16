@@ -1,26 +1,40 @@
 # equal
 ![logo](https://avatars1.githubusercontent.com/u/31987273?v=4&s=100)
 
-compare two async-iterator sequences for equality
+compare two iterator sequences for equality 
 
 [![NPM version][npm-image]][npm-url]
 [![Travis Status][travis-image]][travis-url]
 [![Travis Status][codecov-image]][codecov-url]
 
-## Install
+## Usage
 
+_package requires a system that supports async-iteration, either natively or via down-compiling_
+
+**Install**
 ```
 npm install @async-generators/equal --save
 yarn add @async-generators/equal
 ```
 
-## Usage
+the package `main` entry points to a `commonjs` module distribution; however a `module` entry points to a `es2015` module distribution for supporting build systems like webpack.   
 
-requires a system that supports async-iteration, either natively or via down-compiling.  
+**Api**
 
-## Example
+### equal(first, second [, comparer])
 
-**example.js**
+<code>equal()</code> compares two [sync/async] iterable sequences and returns true if: 
+
+* both yield objects of the same <code>typeof</code>
+* both yield equal items, where <code>comparer(a, b) == true</code>
+* both yield equal items in the same order. 
+* both sequence yield the same number of items
+
+Both <code>first</code> and <code>second</code> must have either a `[Symbol.asyncIterator]` or `[Symbol.iterator]` property. If they have both then `[Symbol.asyncIterator]` is used. 
+
+**Example**
+
+example.js
 ```js
 const equal = require('@async-generators/equal').default;
 
