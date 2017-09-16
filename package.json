@@ -1,5 +1,5 @@
 {
-  "name": "@async-generators/equals",
+  "name": "@async-generators/equal",
   "description": "check if two AsyncIterable sequences are equal",
   "version": "1.0.0",
   "author": {
