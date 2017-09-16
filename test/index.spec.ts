@@ -1,4 +1,4 @@
-import { equal } from '../src';
+import equal from '../src';
 import { expect } from 'chai';
 
 describe("@async-generator/equals", () => {

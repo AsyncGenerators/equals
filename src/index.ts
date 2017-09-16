@@ -1,4 +1,4 @@
-export async function equal<T>(
+export default async function equal<T>(
   first: AsyncIterable<T>,
   second: AsyncIterable<T>,
   comparer: (a: T, b: T) => boolean
