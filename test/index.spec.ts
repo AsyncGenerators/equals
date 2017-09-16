@@ -107,10 +107,25 @@ describe("@async-generator/equals", () => {
     expect(result).to.be.true;
   })
 
+  it("source pass all items to comparer", async () => {
+    let a = async function* () {
+      yield { a: 1 }; yield { a: 2 }; yield { a: 3 };
+    }
+    let comp = []
+    let result = await equal(a(), a(),
+      (x, y) => { 
+        comp.push(x);
+        return x.a === y.a 
+      });
+      
+    expect(result).to.be.true;
+    expect(comp).to.deep.eq([{a:1}, {a:2}, {a:3}]);
+  })
+
   it("should support sync iterators", async () => {
     let a = function* () {
       yield 1; yield 2;
-    }    
+    }
     let b = function* () {
       yield 1; yield 2;
     }
@@ -120,20 +135,20 @@ describe("@async-generator/equals", () => {
   })
 
   it("should throw error if first is not iterable", async () => {
-    let error:Error
-    try{
+    let error: Error
+    try {
       await equal(<any>{}, [])
-    }catch(err){
+    } catch (err) {
       error = err.message
     }
     expect(error).to.be.eq("first parameter is not iterable");
   })
 
   it("should throw error if second is not iterable", async () => {
-    let error:Error;
-    try{
+    let error: Error;
+    try {
       await equal([], <any>{})
-    }catch(err){
+    } catch (err) {
       error = err.message;
     }
     expect(error).to.be.eq("second parameter is not iterable");
