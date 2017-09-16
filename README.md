@@ -27,7 +27,7 @@ const equal = require('@async-generators/equal').default;
 async function* first() {
   yield 1; yield 2; yield 3;
 }
-async function* second() {
+function* second() {
   yield 1; yield 2; yield 3;
 }
 

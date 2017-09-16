@@ -107,14 +107,14 @@ describe("@async-generator/equals", () => {
     expect(result).to.be.true;
   })
 
-  it("should support sync iterator", async () => {
-    let a = async function* () {
+  it("should support sync iterators", async () => {
+    let a = function* () {
       yield 1; yield 2;
     }    
     let b = function* () {
       yield 1; yield 2;
     }
-    let result = await equal(a(), <any>b());
+    let result = await equal(a(), b());
 
     expect(result).to.be.true;
   })
