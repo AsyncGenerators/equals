@@ -67,3 +67,17 @@ node --harmony-async-iteration example.js
 [travis-image]: https://img.shields.io/travis/async-generators/equal/master.svg
 [codecov-url]: https://codecov.io/gh/async-generators/equal
 [codecov-image]: https://codecov.io/gh/async-generators/equal/branch/master/graph/badge.svg
+
+## Typescript
+
+This library is fully typed and can be imported using: 
+
+```ts
+import equal from '@async-generators/equal');
+```
+
+If is also posible to directly execute your [properly configured](https://stackoverflow.com/a/43694282/1657476) typescript with [ts-node](https://www.npmjs.com/package/ts-node):
+
+```
+ts-node --harmony_async_iteration foo.ts
+```
