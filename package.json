@@ -16,8 +16,8 @@
   ],
   "license": "MIT",
   "main": "./dist/commonjs/index.js",
-  "module": "./dist/es2015/index.js",
-  "typings": "./dist/es2015/index.d.ts",
+  "typings": "./dist/commonjs/index.d.ts",
+  "module": "./dist/es2015/index.js",  
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
