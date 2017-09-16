@@ -1,12 +1,16 @@
 {
   "name": "@async-generators/equal",
   "description": "check if two AsyncIterable sequences are equal",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Meirion Hughes",
     "email": "crakinshot@yahoo.com",
     "url": "https://github.com/MeirionHughes"
   },
+  "keywords": ["async", "iterator", "generator", "esnext", "typescript"],
+  "license": "MIT",
+  "main" : "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
@@ -21,7 +25,7 @@
   "scripts": {
     "test": "nyc node_modules/mocha/bin/mocha --harmony-async-iteration --require source-map-support/register --compilers ts:ts-node/register test/*.ts",
     "build": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist",
-    "cover": "codecov",
+    "cover": "codecov"
   },
   "engines": {
     "node": ">=8.5.0"
