@@ -7,9 +7,15 @@
     "email": "crakinshot@yahoo.com",
     "url": "https://github.com/MeirionHughes"
   },
-  "keywords": ["async", "iterator", "generator", "esnext", "typescript"],
+  "keywords": [
+    "async",
+    "iterator",
+    "generator",
+    "esnext",
+    "typescript"
+  ],
   "license": "MIT",
-  "main" : "./dist/index.js",
+  "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "devDependencies": {
     "@types/chai": "^4.0.4",

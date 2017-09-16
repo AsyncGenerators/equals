@@ -8,16 +8,21 @@ compare two async-iterator sequences for equality
 [![Travis Status][codecov-image]][codecov-url]
 
 ## Install
+
 ```
+npm install @async-generators/equal --save
 yarn add @async-generators/equal
 ```
 
 ## Usage
 
-requires a system that supports async-iteration natively, or bundled and down-compiled with tools such as babel and webpack 
+requires a system that supports async-iteration, either natively or via down-compiling.  
 
-```ts
-import equal from '../src';
+## Example
+
+**example.js**
+```js
+const equal = require('@async-generators/equal').default;
 
 async function* first() {
   yield 1; yield 2; yield 3;
@@ -26,7 +31,19 @@ async function* second() {
   yield 1; yield 2; yield 3;
 }
 
-let result = await equal(first(), second())
+async function main(){
+  let result = await equal(first(), second());
+  
+  console.log("equal:", result);
+}
+
+main();
+```
+
+Execute with the latest node.js: 
+
+```
+node --harmony-async-iteration example.js
 ```
 
 [npm-url]: https://npmjs.org/package/@async-generators/equal
