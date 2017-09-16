@@ -1,7 +1,7 @@
 {
   "name": "@async-generators/equal",
   "description": "check if two AsyncIterable sequences are equal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Meirion Hughes",
     "email": "crakinshot@yahoo.com",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "main": "./dist/commonjs/index.js",
   "typings": "./dist/commonjs/index.d.ts",
-  "module": "./dist/es2015/index.js",  
+  "module": "./dist/es2015/index.js",
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
