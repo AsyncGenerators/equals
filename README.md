@@ -11,15 +11,15 @@ compare two iterator sequences for equality
 
 _package requires a system that supports async-iteration, either natively or via down-compiling_
 
-**Install**
+### Install
 ```
 npm install @async-generators/equal --save
 yarn add @async-generators/equal
 ```
 
-the package `main` entry points to a `commonjs` module distribution; however a `module` entry points to a `es2015` module distribution for supporting build systems like webpack.   
+this package's `main` entry points to a `commonjs` module dist. a `module` entry also points to a `es2015` module dist to be used by supported build-systems like webpack. 
 
-**Api**
+## Api
 
 ### equal(first, second [, comparer])
 
@@ -32,7 +32,7 @@ the package `main` entry points to a `commonjs` module distribution; however a `
 
 Both <code>first</code> and <code>second</code> must have either a `[Symbol.asyncIterator]` or `[Symbol.iterator]` property. If they have both then `[Symbol.asyncIterator]` is used. 
 
-**Example**
+## Example
 
 example.js
 ```js
