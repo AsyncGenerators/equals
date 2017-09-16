@@ -60,14 +60,6 @@ Execute with the latest node.js:
 node --harmony-async-iteration example.js
 ```
 
-[npm-url]: https://npmjs.org/package/@async-generators/equal
-[npm-image]: https://img.shields.io/npm/v/@async-generators/equal.svg
-[npm-downloads]: https://img.shields.io/npm/dm/@async-generators/equal.svg
-[travis-url]: https://travis-ci.org/async-generators/equal
-[travis-image]: https://img.shields.io/travis/async-generators/equal/master.svg
-[codecov-url]: https://codecov.io/gh/async-generators/equal
-[codecov-image]: https://codecov.io/gh/async-generators/equal/branch/master/graph/badge.svg
-
 ## Typescript
 
 This library is fully typed and can be imported using: 
@@ -81,3 +73,11 @@ It is also possible to directly execute your [properly configured](https://stack
 ```
 ts-node --harmony_async_iteration foo.ts
 ```
+
+[npm-url]: https://npmjs.org/package/@async-generators/equal
+[npm-image]: https://img.shields.io/npm/v/@async-generators/equal.svg
+[npm-downloads]: https://img.shields.io/npm/dm/@async-generators/equal.svg
+[travis-url]: https://travis-ci.org/async-generators/equal
+[travis-image]: https://img.shields.io/travis/async-generators/equal/master.svg
+[codecov-url]: https://codecov.io/gh/async-generators/equal
+[codecov-image]: https://codecov.io/gh/async-generators/equal/branch/master/graph/badge.svg
