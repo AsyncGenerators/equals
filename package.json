@@ -1,0 +1,47 @@
+{
+  "name": "@async-generators/equals",
+  "description": "check if two AsyncIterable sequences are equal",
+  "version": "1.0.0",
+  "author": {
+    "name": "Meirion Hughes",
+    "email": "crakinshot@yahoo.com",
+    "url": "https://github.com/MeirionHughes"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
+    "codecov": "^2.3.0",
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "test": "nyc node_modules/mocha/bin/mocha --harmony-async-iteration --require source-map-support/register --compilers ts:ts-node/register test/*.ts",
+    "build": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist",
+    "cover": "codecov",
+  },
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules/",
+      "test/"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}
