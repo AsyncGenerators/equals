@@ -76,7 +76,7 @@ This library is fully typed and can be imported using:
 import equal from '@async-generators/equal');
 ```
 
-If is also posible to directly execute your [properly configured](https://stackoverflow.com/a/43694282/1657476) typescript with [ts-node](https://www.npmjs.com/package/ts-node):
+It is also possible to directly execute your [properly configured](https://stackoverflow.com/a/43694282/1657476) typescript with [ts-node](https://www.npmjs.com/package/ts-node):
 
 ```
 ts-node --harmony_async_iteration foo.ts
