@@ -113,13 +113,13 @@ describe("@async-generator/equals", () => {
     }
     let comp = []
     let result = await equal(a(), a(),
-      (x, y) => { 
+      (x, y) => {
         comp.push(x);
-        return x.a === y.a 
+        return x.a === y.a
       });
-      
+
     expect(result).to.be.true;
-    expect(comp).to.deep.eq([{a:1}, {a:2}, {a:3}]);
+    expect(comp).to.deep.eq([{ a: 1 }, { a: 2 }, { a: 3 }]);
   })
 
   it("should support sync iterators", async () => {
@@ -152,5 +152,23 @@ describe("@async-generator/equals", () => {
       error = err.message;
     }
     expect(error).to.be.eq("second parameter is not iterable");
+  })
+
+  it("should support executing and awaiting both iterators at the same time. ", async () => {
+
+    let resolve;
+    let promise = new Promise<number>(r => resolve = r);
+
+    let first = async function* () {
+      yield await promise;
+    }
+
+    let second = async function* () {
+      resolve(1); yield 1;
+    }
+
+    let result = await equal(first(), second());
+
+    expect(result).to.be.true;
   })
 })

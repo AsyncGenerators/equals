@@ -13,12 +13,12 @@ export default async function equal<T>(
   if (typeof ItB !== "function")
     throw Error("second parameter is not iterable");
 
-  const ita:AsyncIterator<T> | Iterator<T> = ItA.call(first);
-  const itb:AsyncIterator<T> | Iterator<T> = ItB.call(second);
+  const ita: AsyncIterator<T> | Iterator<T> = ItA.call(first);
+  const itb: AsyncIterator<T> | Iterator<T> = ItB.call(second);
 
   while (true) {
-    let na = await ita.next();
-    let nb = await itb.next();
+
+    let [na, nb] = await Promise.all([ita.next(), itb.next()]);
 
     if (na.done && nb.done) {
       return true;
