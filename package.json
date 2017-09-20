@@ -1,6 +1,6 @@
 {
   "name": "@async-generators/equal",
-  "description": "check if two AsyncIterable sequences are equal",
+  "description": "compare two iterator sequences for equality",
   "version": "0.3.0",
   "author": {
     "name": "Meirion Hughes",
@@ -58,5 +58,8 @@
     ],
     "sourceMap": true,
     "instrument": true
+  },
+  "dependencies": {
+    "@async-generators/iterable": "^0.2.0"
   }
 }
