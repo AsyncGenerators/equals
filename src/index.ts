@@ -3,7 +3,7 @@ import iterable from '@async-generators/iterable';
 export default async function equal<T>(
   first: AsyncIterable<T> | Iterable<T>,
   second: AsyncIterable<T> | Iterable<T>,
-  comparer: (a: T, b: T) => boolean
+  comparer: (a: T, b: T) => boolean | Promise<boolean>
     = function (a, b) { return a === b }
 ): Promise<boolean> {
   
@@ -26,7 +26,7 @@ export default async function equal<T>(
       return false;
     }
 
-    if (comparer(na.value, nb.value) === false) {
+    if (await comparer(na.value, nb.value) === false) {
       return false;
     }
   }

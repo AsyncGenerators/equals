@@ -1,6 +1,10 @@
 import equal from '../src';
 import { expect } from 'chai';
 
+async function delay(duration){
+  return new Promise(r=>setTimeout(r, duration));
+}
+
 describe("@async-generator/equals", () => {
   it("source should equal itself", async () => {
     let a = async function* () {
@@ -130,6 +134,20 @@ describe("@async-generator/equals", () => {
       yield 1; yield 2;
     }
     let result = await equal(a(), b());
+
+    expect(result).to.be.true;
+  })
+
+  it("should support async comparer", async () => {
+    let a = function* () {
+      yield 1; yield 2;
+    }
+    let b = function* () {
+      yield 1; yield 2;
+    }
+    let result = await equal(a(), b(), async(a,b)=>{
+      await delay(10);return a == b;
+    });
 
     expect(result).to.be.true;
   })
