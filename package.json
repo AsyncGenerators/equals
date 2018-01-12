@@ -31,7 +31,7 @@
     "typescript": "^2.5.2"
   },
   "scripts": {
-    "test": "nyc node_modules/mocha/bin/mocha --harmony-async-iteration --require source-map-support/register --compilers ts:ts-node/register test/*.ts",
+    "test": "nyc node_modules/mocha/bin/mocha --require source-map-support/register --compilers ts:ts-node/register test/*.ts",
     "build": "npm run build:commonjs && npm run build:es2015",
     "build:commonjs": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist/commonjs",
     "build:es2015": "tsc --project tsconfig.build.json --rootDir src/ --outDir ./dist/es2015 --module es2015",
@@ -60,6 +60,6 @@
     "instrument": true
   },
   "dependencies": {
-    "@async-generators/iterable": "^0.2.0"
+    "@async-generators/iterable": "^0.4.0"
   }
 }

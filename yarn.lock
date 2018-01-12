@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@async-generators/iterable@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@async-generators/iterable/-/iterable-0.2.0.tgz#3b4c0987667532e239ac510ff7557ba8438c8c12"
+"@async-generators/iterable@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@async-generators/iterable/-/iterable-0.4.0.tgz#24de94fdfe8fd6d62a1545bcf2a59053c4cb3c2f"
 
 "@types/chai@^4.0.4":
   version "4.0.4"

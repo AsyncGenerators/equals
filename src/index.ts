@@ -1,3 +1,5 @@
+(<any>Symbol)["asyncIterator"] = Symbol["asyncIterator"] || Symbol.for("asyncIterator");
+
 import iterable from '@async-generators/iterable';
 
 export default async function equal<T>(
