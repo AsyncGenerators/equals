@@ -61,6 +61,6 @@
     "instrument": true
   },
   "dependencies": {
-    "@async-generators/iterable": "^0.4.0"
+    "@async-generators/iterable": "^0.5.0"
   }
 }
