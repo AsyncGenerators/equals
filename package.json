@@ -1,7 +1,7 @@
 {
   "name": "@async-generators/equal",
   "description": "compare two iterator sequences for equality",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "author": {
     "name": "Meirion Hughes",
     "email": "crakinshot@yahoo.com",
