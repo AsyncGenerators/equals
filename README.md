@@ -13,7 +13,8 @@ npm install @async-generators/equal --save
 yarn add @async-generators/equal
 ```
 
-this package's `main` entry points to a `commonjs` module dist. a `module` entry also points to a `es2015` module dist to be used by supported build-systems like webpack. 
+This package's `main` entry points to a `commonjs` dist. 
+The `module` entry points to a `es2015` module dist. Both require require native async-generator support, or be down-compiled with a webpack loader. 
 
 ## Api
 
@@ -50,10 +51,10 @@ async function main(){
 main();
 ```
 
-Execute with the latest node.js: 
+Execute with node.js 9 and above:  
 
 ```
-node --harmony-async-iteration example.js
+node --harmony example.js
 ```
 
 ## Typescript
@@ -67,7 +68,7 @@ import equal from '@async-generators/equal');
 It is also possible to directly execute your [properly configured](https://stackoverflow.com/a/43694282/1657476) typescript with [ts-node](https://www.npmjs.com/package/ts-node):
 
 ```
-ts-node --harmony_async_iteration foo.ts
+ts-node --harmony foo.ts
 ```
 
 [npm-url]: https://npmjs.org/package/@async-generators/equal
